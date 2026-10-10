@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Production - Smart Manufacturing</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fa;
+            color: #333;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #0b1f33;
+            color: white;
+
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+
+            margin-left: 25px;
+
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #2196f3;
+        }
+
+        /* MAIN CONTAINER */
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: 45px auto;
+        }
+
+        /* TITLE */
+
+        .title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .title h2 {
+            color: #0b1f33;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #666;
+        }
+
+        /* SUMMARY CARDS */
+
+        .summary {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+
+            margin-bottom: 40px;
+        }
+
+        .summary-card {
+            background: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .summary-card .number {
+            font-size: 30px;
+
+            font-weight: bold;
+
+            color: #2196f3;
+
+            margin-bottom: 8px;
+        }
+
+        .summary-card h3 {
+            color: #0b1f33;
+
+            font-size: 16px;
+        }
+
+        /* OVERALL PROGRESS */
+
+        .overall {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+            margin-bottom: 40px;
+        }
+
+        .overall h3 {
+            color: #0b1f33;
+
+            margin-bottom: 10px;
+        }
+
+        .overall p {
+            color: #666;
+
+            margin-bottom: 15px;
+        }
+
+        .progress-bg {
+            width: 100%;
+
+            height: 18px;
+
+            background: #e0e0e0;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+
+            width: 70%;
+
+            background: #2196f3;
+
+            border-radius: 20px;
+        }
+
+        .progress-text {
+            text-align: right;
+
+            margin-top: 8px;
+
+            font-weight: bold;
+
+            color: #1565c0;
+        }
+
+        /* PRODUCTION TITLE */
+
+        .section-title {
+            color: #0b1f33;
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        /* PRODUCTION CARDS */
+
+        .production-list {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .production-card {
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .production-card h3 {
+            color: #0b1f33;
+
+            margin-bottom: 10px;
+        }
+
+        .production-card p {
+            color: #666;
+
+            margin-bottom: 15px;
+        }
+
+        .progress-info {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 7px;
+
+            font-size: 14px;
+        }
+
+        .bar {
+            width: 100%;
+
+            height: 12px;
+
+            background: #e0e0e0;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .fill {
+            height: 100%;
+
+            background: #2196f3;
+
+            border-radius: 20px;
+        }
+
+        .completed {
+            color: #2e7d32;
+
+            font-weight: bold;
+        }
+
+        .in-progress {
+            color: #ef6c00;
+
+            font-weight: bold;
+        }
+
+        .pending {
+            color: #757575;
+
+            font-weight: bold;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #0b1f33;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            margin-top: 40px;
+        }
+
+        .cta h3 {
+            font-size: 24px;
+
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            color: #d6e2ed;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0b1f33;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 18px;
+
+            margin-top: 50px;
+
+            font-size: 14px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .summary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .production-list {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+
+                font-size: 14px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .summary {
+                grid-template-columns: 1fr;
+            }
+
+            .title h2 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>🏭 Smart Manufacturing</h1>
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/products">Products</a>
+
+            <a href="/production">Production</a>
+
+            <a href="/contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <div class="container">
+
+
+        <!-- TITLE -->
+
+        <div class="title">
+
+            <h2>Production Dashboard</h2>
+
+            <p>
+                Monitor manufacturing activities and production progress.
+            </p>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="summary">
+
+
+            <div class="summary-card">
+
+                <div class="number">
+                    4
+                </div>
+
+                <h3>
+                    Active Orders
+                </h3>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="number">
+                    1,950
+                </div>
+
+                <h3>
+                    Total Units
+                </h3>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="number">
+                    2
+                </div>
+
+                <h3>
+                    Completed
+                </h3>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="number">
+                    1
+                </div>
+
+                <h3>
+                    In Progress
+                </h3>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- OVERALL PROGRESS -->
+
+        <div class="overall">
+
+            <h3>
+                Overall Production Progress
+            </h3>
+
+            <p>
+                Current manufacturing progress across all active production orders.
+            </p>
+
+            <div class="progress-bg">
+
+                <div class="progress-fill"></div>
+
+            </div>
+
+            <div class="progress-text">
+                70% Completed
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTION DETAILS -->
+
+        <h3 class="section-title">
+            Production Orders
+        </h3>
+
+
+        <div class="production-list">
+
+
+            <!-- MACHINE PARTS -->
+
+            <div class="production-card">
+
+                <h3>
+                    ⚙️ Machine Parts
+                </h3>
+
+                <p>
+                    Production quantity: 500 Units
+                </p>
+
+                <div class="progress-info">
+
+                    <span>Progress</span>
+
+                    <span>100%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div
+                        class="fill"
+                        style="width: 100%;">
+                    </div>
+
+                </div>
+
+                <p class="completed">
+                    ✓ Completed
+                </p>
+
+            </div>
+
+
+            <!-- STEEL COMPONENTS -->
+
+            <div class="production-card">
+
+                <h3>
+                    🔩 Steel Components
+                </h3>
+
+                <p>
+                    Production quantity: 300 Units
+                </p>
+
+                <div class="progress-info">
+
+                    <span>Progress</span>
+
+                    <span>65%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div
+                        class="fill"
+                        style="width: 65%;">
+                    </div>
+
+                </div>
+
+                <p class="in-progress">
+                    ● In Progress
+                </p>
+
+            </div>
+
+
+            <!-- METAL SHEETS -->
+
+            <div class="production-card">
+
+                <h3>
+                    🏗️ Metal Sheets
+                </h3>
+
+                <p>
+                    Production quantity: 700 Units
+                </p>
+
+                <div class="progress-info">
+
+                    <span>Progress</span>
+
+                    <span>30%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div
+                        class="fill"
+                        style="width: 30%;">
+                    </div>
+
+                </div>
+
+                <p class="pending">
+                    ○ Pending
+                </p>
+
+            </div>
+
+
+            <!-- INDUSTRIAL TOOLS -->
+
+            <div class="production-card">
+
+                <h3>
+                    🔧 Industrial Tools
+                </h3>
+
+                <p>
+                    Production quantity: 450 Units
+                </p>
+
+                <div class="progress-info">
+
+                    <span>Progress</span>
+
+                    <span>85%</span>
+
+                </div>
+
+                <div class="bar">
+
+                    <div
+                        class="fill"
+                        style="width: 85%;">
+                    </div>
+
+                </div>
+
+                <p class="completed">
+                    ✓ Completed
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="cta">
+
+            <h3>
+                Smart Manufacturing Operations
+            </h3>
+
+            <p>
+                Efficient production monitoring helps maintain quality,
+                productivity and timely delivery.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Smart Manufacturing | All Rights Reserved
+
+    </footer>
+
+
+</body>
+
+</html>

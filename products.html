@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Products - Smart Manufacturing</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fa;
+            color: #222;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #0b1f33;
+            color: white;
+            padding: 20px 60px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4fc3f7;
+        }
+
+        /* PAGE TITLE */
+
+        .title {
+            text-align: center;
+            padding: 55px 20px 35px;
+            background: white;
+        }
+
+        .title h2 {
+            font-size: 34px;
+            color: #0b1f33;
+            margin-bottom: 12px;
+        }
+
+        .title p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 45px 50px 70px;
+        }
+
+        .product-card {
+            background: white;
+            width: 280px;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.13);
+        }
+
+        /* PRODUCT ICON */
+
+        .product-icon {
+            width: 85px;
+            height: 85px;
+
+            margin: 0 auto 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #eaf5fc;
+            border-radius: 50%;
+
+            font-size: 42px;
+        }
+
+        .product-card h3 {
+            color: #0b1f33;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .product-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        /* PRICE */
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 12px;
+        }
+
+        /* STATUS */
+
+        .status {
+            display: inline-block;
+
+            background: #e8f5e9;
+            color: #2e7d32;
+
+            padding: 6px 14px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        /* BUTTON */
+
+        .btn {
+            display: inline-block;
+
+            background: #2196f3;
+            color: white;
+
+            padding: 12px 22px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1565c0;
+        }
+
+        /* NOTE */
+
+        .note {
+            text-align: center;
+            padding: 0 20px 60px;
+            color: #666;
+        }
+
+        .note strong {
+            color: #0b1f33;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0b1f33;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 18px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .title h2 {
+                font-size: 30px;
+            }
+
+            .products {
+                padding: 35px 20px 55px;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>🏭 Smart Manufacturing</h1>
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/products">Products</a>
+
+            <a href="/production">Production</a>
+
+            <a href="/contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE TITLE -->
+
+    <section class="title">
+
+        <h2>Our Products</h2>
+
+        <p>
+            Explore our high-quality manufactured products
+            designed for industrial applications.
+        </p>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products">
+
+
+        <!-- MACHINE PARTS -->
+
+        <div class="product-card">
+
+            <div class="product-icon">
+                ⚙️
+            </div>
+
+            <h3>
+                Machine Parts
+            </h3>
+
+            <p>
+                High-quality machine components designed
+                for reliable industrial applications.
+            </p>
+
+            <div class="price">
+                ₹3,500
+            </div>
+
+            <div class="status">
+                ✓ Available
+            </div>
+
+            <br>
+
+            <a
+                href="/product/machine-parts"
+                class="btn"
+            >
+                View Details
+            </a>
+
+        </div>
+
+
+        <!-- STEEL COMPONENTS -->
+
+        <div class="product-card">
+
+            <div class="product-icon">
+                🔩
+            </div>
+
+            <h3>
+                Steel Components
+            </h3>
+
+            <p>
+                Durable steel components manufactured
+                with precision and consistent quality.
+            </p>
+
+            <div class="price">
+                ₹5,000
+            </div>
+
+            <div class="status">
+                ✓ Available
+            </div>
+
+            <br>
+
+            <a
+                href="/product/steel-components"
+                class="btn"
+            >
+                View Details
+            </a>
+
+        </div>
+
+
+        <!-- METAL SHEETS -->
+
+        <div class="product-card">
+
+            <div class="product-icon">
+                🏗️
+            </div>
+
+            <h3>
+                Metal Sheets
+            </h3>
+
+            <p>
+                Strong and reliable metal sheets suitable
+                for industrial and construction applications.
+            </p>
+
+            <div class="price">
+                ₹2,000
+            </div>
+
+            <div class="status">
+                ✓ Available
+            </div>
+
+            <br>
+
+            <a
+                href="/product/metal-sheets"
+                class="btn"
+            >
+                View Details
+            </a>
+
+        </div>
+
+
+        <!-- INDUSTRIAL TOOLS -->
+
+        <div class="product-card">
+
+            <div class="product-icon">
+                🔧
+            </div>
+
+            <h3>
+                Industrial Tools
+            </h3>
+
+            <p>
+                Reliable industrial tools suitable for
+                different manufacturing operations.
+            </p>
+
+            <div class="price">
+                ₹1,500
+            </div>
+
+            <div class="status">
+                ✓ Available
+            </div>
+
+            <br>
+
+            <a
+                href="/product/industrial-tools"
+                class="btn"
+            >
+                View Details
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- NOTE -->
+
+    <div class="note">
+
+        <p>
+
+            <strong>
+                Need a customized product?
+            </strong>
+
+            Contact our team for more information.
+
+        </p>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Smart Manufacturing | All Rights Reserved
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
